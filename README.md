@@ -19,7 +19,7 @@ your JavaScript assets into portable code (so it works with all browsers, even
 if they don't support the latest ES6 features), compile single file components
 into their separate HTML, CSS, and JavaScript files, combine your JavaScript
 files into a single file and compress them so your web pages load faster,
-automatically reload your server when you change it, and more.
+automatically reload your front end when you change it, and more.
 
 We'll cover these in the following lessons:
 

@@ -23,10 +23,10 @@ automatically reload your front end when you change it, and more.
 
 We'll cover these in the following lessons:
 
-- [Lesson 1](/tutorials/lesson1.html): Installing and using the Vue CLI
+- [Lesson 1](/tutorials/lesson1.md): Installing and using the Vue CLI
 
-- [Lesson 2](/tutorials/lesson2.html): The Architecture of a Vue Application
+- [Lesson 2](/tutorials/lesson2.md): The Architecture of a Vue Application
 
-- [Lesson 3](/tutorials/lesson3.html): Building an App
+- [Lesson 3](/tutorials/lesson3.md): Building an App
 
-- [Lesson 4](/tutorials/lesson4.html): Using Vuex to Manage State
+- [Lesson 4](/tutorials/lesson4.md): Using Vuex to Manage State

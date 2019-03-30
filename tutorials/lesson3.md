@@ -127,19 +127,12 @@ node run serve
 
 This will let you visit the website at `localhost:8080`. You will notice that the website automatically reloads every time you edit a file that modifies the front end.
 
-## Title and Imports
+## Title
 
 We want to change the title of our application and import the `axios` library. To do this, edit `public/index.html` and change the title:
 
 ```
 <title>Tickets</title>
-```
-
-In addition, add the following script tag at the end of the body:
-
-```
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
-</body>
 ```
 
 ## Header
@@ -212,6 +205,12 @@ If you check the browser, you should see the header:
 
 We want to show a list of all of the tickets on the home page.
 
+First, install the `axios` library:
+
+```
+npm install axios
+```
+
 First, modify the `template` section of `src/views/Home.vue`:
 
 ```
@@ -235,11 +234,12 @@ Likewise, modify the `script` section of `src/views/Home.vue`:
 
 ```
 <script>
+import axios from 'axios';
 export default {
   name: 'home',
   data() {
     return {
-      tickets: {}
+      tickets: []
     }
   },
   created() {
@@ -260,6 +260,8 @@ export default {
 ```
 
 Notice that the `script` section contains the Vue code you are used to writing. It is mostly identical except:
+
+- We use an import statement to import the `axios` library. Previously, we used a CDN for the this library and loaded it from a script tag in our HTML file. Because we installed it with npm, we can import it here, and then webpack will bundle it up when we distribute the application.
 
 - Instead of creating the Vue instance here (it is created in `main.js`), we use an export statement
 
@@ -294,7 +296,8 @@ Notice that this link references a view at `/create`. You can create this compon
 <div>
   <h1>Create a Ticket</h1>
   <form v-if="creating" @submit.prevent="addTicket">
-    <input v-model="addedName" placeholder="Name"></p>
+    <input v-model="addedName" placeholder="Name">
+    <p></p>
     <textarea v-model="addedProblem"></textarea>
     <br />
     <button type="submit">Submit</button>
@@ -313,6 +316,7 @@ In the `script` section of this same file, add:
 
 ```
 <script>
+import axios from 'axios';
 export default {
   name: 'create',
   data() {
@@ -328,14 +332,13 @@ export default {
     },
     async addTicket() {
       try {
-        let response = await axios.post("/api/tickets", {
+        await axios.post("/api/tickets", {
           name: this.addedName,
           problem: this.addedProblem
         });
         this.addedName = "";
         this.addedProblem = "";
         this.creating = false;
-        this.getTickets();
       } catch (error) {
         console.log(error);
       }

@@ -27,4 +27,6 @@ We'll cover these in the following lessons:
 
 - [Lesson 2](/tutorials/lesson2.html): The Architecture of a Vue Application
 
-- [Lesson 3](/tutorials/lesson3.html): # Building an App
+- [Lesson 3](/tutorials/lesson3.html): Building an App
+
+- [Lesson 4](/tutorials/lesson4.html): Using Vuex to Manage State

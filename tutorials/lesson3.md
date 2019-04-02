@@ -375,6 +375,27 @@ button {
 </style>
 ```
 
+## Router
+
+The last step is to setup the router to get to this page. In `src/router.js`
+add this import:
+
+```
+import Create from './views/Create.vue'
+```
+
+and then add this route:
+
+```
+    {
+      path: '/create',
+      name: 'create',
+      component: Create,
+    }
+```
+
+## Results
+
 You should now have a page that lets you submit tickets.
 
 ![submit tickets](/screenshots/submit-ticket.png)

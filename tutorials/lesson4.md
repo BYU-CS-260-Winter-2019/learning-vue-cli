@@ -41,7 +41,7 @@ You can see that it contains sections for each of these things.
 
 ## State for Tickets
 
-The tickets are a good place to use state in our application. Edit `src/state.js` so it contains the following:
+The tickets are a good place to use state in our application. Edit `src/store.js` so it contains the following:
 
 ```
 import Vue from 'vue';

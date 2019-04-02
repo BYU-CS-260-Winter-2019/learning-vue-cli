@@ -108,6 +108,7 @@ module.exports = {
         target: 'http://localhost:3000',
       },
     }
+  }
 }
 ```
 
@@ -122,7 +123,7 @@ node server.js
 Run the front end with:
 
 ```
-node run serve
+npm run serve
 ```
 
 This will let you visit the website at `localhost:8080`. You will notice that the website automatically reloads every time you edit a file that modifies the front end.

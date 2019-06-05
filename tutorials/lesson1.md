@@ -3,7 +3,6 @@
 The first step is to install the Vue CLI using npm:
 
 ```
-nvm use stable
 npm install -g @vue/cli
 ```
 
